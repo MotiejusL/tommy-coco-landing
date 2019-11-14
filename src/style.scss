@@ -1,6 +1,7 @@
 @import 'reset';
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
 
 @mixin font-size($size, $base: 16) {
   font-size: $size + 'px';
@@ -539,10 +540,16 @@ header {
         margin: 0 14%;
       }
       h3 {
-        @include font-size(16);
+        @include font-size(13);
+        letter-spacing: 1px;
+        margin-bottom: 9px;
       }
       h4 {
         margin-bottom: 25px;
+        font-weight: 500;
+      }
+      .price {
+        @include font-size(18);
       }
       .new-price {
         color: $main-color-red;

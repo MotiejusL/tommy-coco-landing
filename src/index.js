@@ -92,7 +92,7 @@ function styleNavMenuLinks() {
 function showMenuLinks() {
   clonedNavMenuLinksUl.style.display = "block";
 
-  header.style.height = "auto";
+  header.style.height = "visible";
   header.style.overflow = "hidden";
 
   header.appendChild(clonedNavMenuLinksUl);

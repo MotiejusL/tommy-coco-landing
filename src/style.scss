@@ -197,6 +197,9 @@ header {
   height: 120px;
   background-color: #ffffff;
   padding: 0 50px;
+  z-index: 10;
+  position: relative;
+  box-shadow: 1.21px 4.85px 20px rgba(0,0,0,0.2);
   @media only screen and (max-width: 1250px) {
     padding: 0 20px;
   }

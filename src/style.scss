@@ -715,6 +715,9 @@ header {
       width: 100%;
       border: none;
       border-bottom: 2px solid $main-color-light-2;
+      &:focus {
+        border-bottom: 2px solid $main-color-dark-1;
+      }
       @media only screen and (max-width: 800px) {
         font-size: 14px;
         padding: 12px 0;

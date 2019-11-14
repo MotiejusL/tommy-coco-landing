@@ -38,6 +38,7 @@ h1 {
 h2 {
   @include font-size(30);
   text-transform: uppercase;
+  letter-spacing: 1.5px;
   color: $main-color-dark-3;
 }
 
@@ -108,6 +109,7 @@ p {
   border: none;
   letter-spacing: 1px;
   padding: 20px 32px;
+  font-weight: 500;
   box-shadow: 1.21px 4.85px 20px rgba(0,0,0,0.2);box-shadow: 1.21px 4.85px 20px rgba(0,0,0,0.2);
   cursor: pointer;
   @media only screen and (max-width: 800px) {
@@ -138,6 +140,7 @@ p {
     h3 {
       font-size: 16px;
       letter-spacing: 1px;
+      font-weight: 500;
       @media only screen and (max-width: 1250px) {
         font-size: 13px;
         letter-spacing: 0.4px;
@@ -451,11 +454,11 @@ header {
   padding: 100px 0 100px 0;
   h2 {
     text-align: center;
-    margin-bottom: 62px;
+    margin-bottom: 65px;
   }
   .after-text {
     text-align: center;
-    margin-top: 62px;
+    margin-top: 65px;
   }
 }
 

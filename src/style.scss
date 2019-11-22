@@ -25,6 +25,10 @@ $main-color-red: #8b263c;
   clear: both;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -104,17 +108,22 @@ p {
   background-color: $main-color-dark-1;
   color: $main-color-light-1;
   font-size: 18px;
+  line-height: 21.6px;
   text-transform: uppercase;
   border-radius: 3px;
   border: none;
   letter-spacing: 1px;
-  padding: 20px 32px;
+  padding: 20px 27px;
   font-weight: 500;
   box-shadow: 1.21px 4.85px 20px rgba(0,0,0,0.2);box-shadow: 1.21px 4.85px 20px rgba(0,0,0,0.2);
   cursor: pointer;
   @media only screen and (max-width: 800px) {
-    font-size: 14px;
-    padding: 12px 22px;
+    font-size: 16px;
+    padding: 16px 23px;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 13px;
+    padding: 10px 16px;
   }
   &:hover {
     background-color: $main-color-dark-2;
@@ -215,6 +224,7 @@ header {
     img {
       width: 275px;
       vertical-align: middle;
+      height: 100%;
       @media only screen and (max-width: 1250px) {
         width: 172px;
       }
@@ -308,6 +318,7 @@ header {
 }
 
 .hero-images {
+  overflow: hidden;
   height: 750px;
   position: relative;
   @media only screen and (max-width: 800px) {
@@ -317,7 +328,7 @@ header {
     height: auto;
   }
   .hero-left-big {
-    width: 68%;
+    width: 67.99%;
     margin-right: 10px;
     float: left;
     height: 100%;
@@ -340,7 +351,7 @@ header {
       .hero-text-container {
         .on-hero-image {
           width: 73px;
-          height: 73px;
+          height: 100%;
           vertical-align: middle;
           margin-bottom: 5px;
         }
@@ -366,7 +377,7 @@ header {
   .hero-left-small {
     float: left;
     height: 100%;
-    width: calc(32% - 10px);
+    width: calc(31.99% - 10px);
     @media only screen and (max-width: 500px) {
       width: 100%;
       height: 200px;
@@ -479,9 +490,26 @@ header {
 .slider {
   .items {
     position: relative;
-    .items-container {
-      width: 95%;
+    .slider-items-filter {
+      width: 95.5%;
       margin: auto;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .slide-items-wrapper {
+      width: 95%;
+      position: relative;
+      margin: auto;
+      z-index: 2;
+    }
+    .items-container {
+      margin: auto;
+      position: relative;
       @media only screen and (max-width: 800px) {
         width: 85%;
       }
@@ -494,6 +522,8 @@ header {
       line-height: 53px;
       text-align: center;
       cursor: pointer;
+      z-index: 5;
+      background-color: #ffffff;
       @media only screen and (max-width: 1250px) {
         width: 40px;
         height: 40px;
@@ -517,14 +547,14 @@ header {
     .left {
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-10%);
+      top: 0;
+      transform: translateY(300%);
     }
     .right {
       position: absolute;
       right: 0;
-      top: 50%;
-      transform: translateY(-10%);
+      top: 0;
+      transform: translateY(300%);
     }
     .item {
       float: left;
@@ -544,6 +574,9 @@ header {
       @media only screen and (max-width: 500px) {
         width: 72%;
         margin: 0 14%;
+        &:not(:first-child) {
+          display: none;
+        }
       }
       h3 {
         @include font-size(13);
@@ -572,6 +605,7 @@ header {
         left: 0;
         font-size: 13px;
         line-height: 15.6px;
+        font-weight: 500;
         color: #ffffff;
         padding: 3.5px 10px;
         letter-spacing: 1px;
@@ -594,6 +628,9 @@ header {
       &:hover {
         .item-hover-container {
           display: block;
+        }
+        h4 {
+          text-decoration: underline;
         }
       }
     }
@@ -665,11 +702,19 @@ header {
     }
   }
   .after-text {
+    display: block;
+    color: $main-color-dark-3;
     span {
       padding-left: 10px;
       img {
         width: 20px;
         vertical-align: middle;
+      }
+    }
+    &:hover {
+      color: #ffffff;
+      img {
+        filter: brightness(0%) saturate(100%) invert(100%) sepia(10%) saturate(0%) hue-rotate(136deg) brightness(103%) contrast(103%);
       }
     }
   }
@@ -839,6 +884,7 @@ footer {
             padding-left: 15px;
             img {
               width: 30px;
+              height: 100%;
               vertical-align: middle;
               @media only screen and (max-width: 800px) {
                 width: 20px;
@@ -873,4 +919,31 @@ footer {
       }
     }
   }
+}
+
+.loaded {
+  header {
+    animation: appear 0.8s ease-in 0.4s forwards;
+  }
+  .hero-left-big {
+    animation: from-left 0.8s ease-in-out 0.4s forwards;
+  }
+  .hero-left-small {
+    animation: from-right 0.8s ease-in-out 0.4s forwards;
+  }
+}
+
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes from-left {
+  from {transform: translateX(-60%); opacity: 0.4}
+  to {transform: translateX(0); opacity: 1}
+}
+
+@keyframes from-right {
+  from {transform: translateX(70%); opacity: 0.4}
+  to {transform: translateX(0); opacity: 1}
 }

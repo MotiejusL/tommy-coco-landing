@@ -25,6 +25,11 @@ $main-color-red: #8b263c;
   clear: both;
 }
 
+body, html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -320,7 +325,6 @@ header {
 }
 
 .hero-images {
-  overflow: hidden;
   height: 750px;
   position: relative;
   @media only screen and (max-width: 800px) {
@@ -336,6 +340,7 @@ header {
     height: 100%;
     position: relative;
     opacity: 0;
+    overflow: hidden;
     @media only screen and (max-width: 500px) {
       width: 100%;
       height: 400px;

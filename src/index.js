@@ -52,15 +52,15 @@ function slide(container, direction, itemsContainer, button) {
 
   slideWrapper.style.overflow = "hidden";
   button.style.pointerEvents = "none";
-  sliderItemsFilter.style.boxShadow = "inset 150px 0 30px -110px #ffffff, inset -150px 0 30px -110px #ffffff";
+  sliderItemsFilter.style.boxShadow = "inset 175px 0 30px -110px #ffffff, inset -175px 0 30px -110px #ffffff";
   sliderItemsFilter.style.pointerEvents = "auto";
 
   setAsideItemsCloneForSlider(itemsCloned, direction);
 
   slideWrapper.appendChild(itemsCloned).focus();
 
-  itemsCloned.style.transition = "transform 0.5s ease-in-out";
-  itemsContainer.style.transition = "transform 0.5s ease-in-out";
+  itemsCloned.style.transition = "transform 0.6s ease-in-out";
+  itemsContainer.style.transition = "transform 0.6s ease-in-out";
 
 
   swapItemsInClonedContainerIfMobile(itemsContainer, itemsCloned, direction);
@@ -82,7 +82,7 @@ function slide(container, direction, itemsContainer, button) {
     slideWrapper.style.overflow = "visible";
     sliderItemsFilter.style.boxShadow = "none";
     sliderItemsFilter.style.pointerEvents = "none";
-  }, 500)
+  }, 600)
 }
 
 function changeItemsMainContNotMobile(itemNodeList, direction, itemsContainer) {

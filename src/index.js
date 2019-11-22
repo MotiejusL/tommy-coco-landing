@@ -2,6 +2,7 @@ import './style.scss';
 
 window.addEventListener("load", function() {
   document.querySelector("body").classList.add("loaded");
+  document.querySelector("body").style.display = "block";
 })
 
 var nav = document.querySelector("nav");
